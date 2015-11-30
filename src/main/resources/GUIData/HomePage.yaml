@@ -1,0 +1,49 @@
+baseClass: com.paypal.selion.testcomponents.BasicPageImpl
+elements:
+  flightButton:
+    locators:
+      US: "css=#tab-flight-tab"
+  hotelButton:
+    locators:
+      US: "css=#tab-car-tab"
+  startCityTextField:
+    locators:
+      US: "css=#flight-origin"
+  endCityTextField:
+    locators:
+      US: "css=#flight-destination"     
+  searchResultContainer:
+    locators:
+      US: "css=.results-item"
+    containerElements:
+      selectResultLink:
+        locators:
+          US: "css=#aria-option-0"
+  startDateTextField:
+    locators:
+      US: "css=#flight-departing"
+  firstDateTable:
+    locators:
+      US: "css=.cal-date"
+  nextMonthButton:
+    locators:
+      US: "css=.btn-paging.btn-secondary.next"
+  pickUpTextField:
+    locators:
+      US: "css=#car-pickup"
+  dropOffTextField:
+    locators:
+      US: "css=#car-dropoff"
+  pickUpList:
+    locators:
+      US: "css=#car-pickup-time"
+  dropOffList:
+    locators:
+      US: "css=#car-dropoff-time"
+  searchButton:
+    locators:
+      US: "css=#search-button"
+pageValidators: [ 
+  flightButton.isVisible
+  searchButton]
+defaultLocale: "US"
