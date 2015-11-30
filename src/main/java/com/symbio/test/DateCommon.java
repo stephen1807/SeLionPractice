@@ -42,7 +42,7 @@ public class DateCommon {
 	 *            Number of weeks to add
 	 * @return Resulted date after addition
 	 */
-	public Date addWeekToDate(Date inputDaxte, int numberOfWeeksInteger) {
+	public Date addWeekToDate(Date inputDate, int numberOfWeeksInteger) {
 
 		Calendar currentCalendar = new GregorianCalendar();
 		currentCalendar.setTime(inputDate);
