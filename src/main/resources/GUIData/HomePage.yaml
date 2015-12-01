@@ -8,7 +8,7 @@ elements:
       US: "css=#tab-car-tab"
   changeLanguageLink:
     locators:
-      US: "#header-language-2057"
+      US: "css=#globalSiteNavigation>ul[class='shop-nav nav-group cf']>li[id='language-link-2057']>a"
   startCityTextField:
     locators:
       US: "css=#flight-origin"
@@ -28,9 +28,6 @@ elements:
   endDateTextField:
     locators:
       US: "css=#flight-returning"
-  firstDateTable:
-    locators:
-      US: "css=.cal-date"
   nextMonthButton:
     locators:
       US: "css=.btn-paging.btn-secondary.next"

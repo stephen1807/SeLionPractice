@@ -2,21 +2,13 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 elements:
   currentCalendarLabel:
     locators:
-<<<<<<< HEAD
       US: "css=.cal section:nth-child(2) > header > h2 "
-=======
-      US: "css=.cal-month:nth-child(1) > header > h2 "
->>>>>>> Finished the search result pages and their extensions
   nextMonthButton:
     locators:
       US: "css=.btn-paging.next"
   dateContainer:
     locators:
-<<<<<<< HEAD
       US: "css=.cal section:nth-child(2) .cal-dates > li"
-=======
-      US: "css=.cal-month:nth-child(1) .cal-dates > li"
->>>>>>> Finished the search result pages and their extensions
     containerElements:
       dateLink:
         locators:
