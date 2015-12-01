@@ -29,31 +29,32 @@ public class DatePickerModuleExt extends DatePickerModule {
 		Calendar targetCalendar = new GregorianCalendar();
 		Calendar currentCalendar = new GregorianCalendar();
 		targetCalendar.setTime(targetDate);
-
+		
 		// Format the calendar into the same format as the label in calendar
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy");
 
 		while (true) {
-			currentCalendar.setTime(simpleDateFormat.parse(this.getCurrentCalendarLabel().getText()));
+			Date currentDate = simpleDateFormat.parse(this.getCurrentCalendarLabel().getText());
+			currentCalendar.setTime(currentDate);
 
 			// Compare year
 			if (currentCalendar.get(Calendar.YEAR) < targetCalendar.get(Calendar.YEAR)) {
 				// If earlier than targeted year, click next month button
 				this.getNextMonthButton().click();
 			} else {
-				
-				//Compare month
+
+				// Compare month
 				if (currentCalendar.get(Calendar.MONTH) < targetCalendar.get(Calendar.MONTH)) {
-					//If earlier than targeted month, click next month button
+					// If earlier than targeted month, click next month button
 					this.getNextMonthButton().click();
 				} else {
+					
 					// Loop through all dates in the current calendar
 					for (int loopIndex = 0; loopIndex < this.getDateContainer().size(); loopIndex++) {
-						
 						// Compare the current date with targeted date
-						if (this.getDateContainer(loopIndex)
+						if (this.getDateContainer(loopIndex).getText()
 								.equals(String.valueOf(targetCalendar.get(Calendar.DAY_OF_MONTH)))) {
-							//Click targeted date
+							// Click targeted date
 							this.getDateContainer(loopIndex).click();
 							return;
 						}

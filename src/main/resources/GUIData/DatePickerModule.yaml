@@ -5,7 +5,7 @@ elements:
       US: "css=.cal section:nth-child(2) > header > h2 "
   nextMonthButton:
     locators:
-      US: "css=.btn-paging.next"
+      US: "css=.cal .btn-paging.next"
   dateContainer:
     locators:
       US: "css=.cal section:nth-child(2) .cal-dates > li"

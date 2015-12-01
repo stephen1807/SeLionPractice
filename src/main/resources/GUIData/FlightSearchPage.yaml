@@ -13,7 +13,6 @@ elements:
       selectResultButton:
         locators:
           US: "css=.t-select-btn"
-
 pageValidators: [
   searchResultContainer.isVisible
 ]
