@@ -6,22 +6,28 @@ elements:
   hotelButton:
     locators:
       US: "css=#tab-car-tab"
+  changeLanguageLink:
+    locators:
+      US: "#header-language-2057"
   startCityTextField:
     locators:
       US: "css=#flight-origin"
   endCityTextField:
     locators:
       US: "css=#flight-destination"     
-  searchResultContainer:
+  destinationSuggestionContainer:
     locators:
       US: "css=.results-item"
     containerElements:
-      selectResultLink:
+      destinationSuggestionLink:
         locators:
-          US: "css=#aria-option-0"
+          US: "css=a"
   startDateTextField:
     locators:
       US: "css=#flight-departing"
+  endDateTextField:
+    locators:
+      US: "css=#flight-returning"
   firstDateTable:
     locators:
       US: "css=.cal-date"
@@ -45,5 +51,6 @@ elements:
       US: "css=#search-button"
 pageValidators: [ 
   flightButton.isVisible
-  searchButton]
+  searchButton
+]
 defaultLocale: "US"
