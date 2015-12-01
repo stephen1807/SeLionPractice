@@ -6,9 +6,12 @@ elements:
   carTypeSUVCheckBox:
     locators:
       US: "css=#ct-checkbox-desktop-carSize-suv"
+<<<<<<< HEAD
   carTypeLuxuryCheckBox:
     locators:
       US: "css=#ct-checkbox-desktop-carSize-luxury"
+=======
+>>>>>>> Finished the search result pages and their extensions
   searchResultContainer:
     locators:
       US: "css=.ct-grid .ct-car"
