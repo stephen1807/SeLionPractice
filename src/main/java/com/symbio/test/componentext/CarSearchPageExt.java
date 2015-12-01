@@ -10,5 +10,5 @@ import com.paypal.selion.testcomponents.CarSearchPage;
  */
 public class CarSearchPageExt extends CarSearchPage {
 
-	
+
 }
