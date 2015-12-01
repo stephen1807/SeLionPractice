@@ -1,5 +1,9 @@
 package com.symbio.test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.annotations.Test;
 
 import com.paypal.selion.annotations.WebTest;
@@ -14,6 +18,15 @@ public class AppTest
 	@Test
 	@WebTest
 	public void test() {
-		Grid.open("http://www.expedia.com");
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy");
+		Date date = new Date();
+		try {
+			date = simpleDateFormat.parse("DEC 2015");
+		} catch (ParseException e) {
+			System.out.println("ERROR");
+			e.printStackTrace();
+		}
+		System.out.println(date);
 	}
 }
