@@ -1,0 +1,10 @@
+<suite thread-count="1" verbose="1" name="Selion Test"
+	skipfailedinvocationcounts="false" junit="false" parallel="classes"
+	data-provider-thread-count="1" annotations="JDK">
+
+	<parameter name="browser" value="*firefox" />
+
+	<parameter name="runLocally" value="true" />
+
+
+</suite>

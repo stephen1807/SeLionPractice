@@ -1,0 +1,23 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  sortPriceButton:
+    locators:
+      US: "css=button[data-opt-group='Price']"
+  fourStarsCheckBox:
+    locators:
+      US: "css=#star4"
+  fiveStarsCheckBox:
+    locators:
+      US: "css=#star5"
+  searchResultContainer:
+    locators:
+      US: "css=#resultsContainer .hotelWrapper"
+    containerElements:
+      hotelNameLink:
+        locators:
+          US: "css=.fakeLink .hotelName"     
+
+pageValidators: [
+  searchResultContainer.isVisible
+]
+defaultLocale: "US"

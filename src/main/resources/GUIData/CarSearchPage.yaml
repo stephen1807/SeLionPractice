@@ -1,0 +1,29 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  sortOptionList:
+    locators:
+      US: "css=#ct_avail_sort"
+  carTypeSUVCheckBox:
+    locators:
+      US: "css=#ct-checkbox-desktop-carSize-suv"
+  carTypeLuxuryCheckBox:
+    locators:
+      US: "css=#ct-checkbox-desktop-carSize-luxury"
+  searchResultContainer:
+    locators:
+      US: "css=.ct-grid .ct-car"
+    containerElements:
+      carNameLabel:
+        locators:
+          US: "css=.ct-car-details-modal .ct-palette-p-color"
+      carTypeLabel:
+        locators:
+          US: "css=.ct-car-type .ct-palette-s-color"
+      selectResultButton:
+        locators:
+          US: "css=.ct-car-rate-btn"
+     
+pageValidators: [
+  searchResultContainer.isVisible
+]
+defaultLocale: "US"

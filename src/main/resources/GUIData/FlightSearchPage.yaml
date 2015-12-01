@@ -1,0 +1,20 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  searchSortOptionList:
+    locators:
+      US: "css=.select select[name='sort']"
+  searchResultContainer:
+    locators:
+      US: "css=.flex-card"
+    containerElements:
+      flightLengthLabel:
+        locators:
+          US: "css=.duration-emphasis"
+      selectResultButton:
+        locators:
+          US: "css=.t-select-btn"
+
+pageValidators: [
+  searchResultContainer.isVisible
+]
+defaultLocale: "US"
