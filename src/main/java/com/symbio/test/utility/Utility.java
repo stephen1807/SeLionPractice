@@ -3,6 +3,10 @@ package com.symbio.test.utility;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Set;
+
+import com.paypal.selion.platform.grid.Grid;
 
 /**
  * Utility class containing methods used in other methods
@@ -52,5 +56,23 @@ public class Utility {
 
 		return currentCalendar.getTime();
 	}
+	
+	/**
+	 * Switch to the new window
+	 * 
+	 * @param existedHandles
+	 *            The list of handles before the new handle come up
+	 * 
+	 */
+	public void switchToNewWindow(List<String> existedHandles){
+		Set<String> handles=Grid.driver().getWindowHandles();
+		String currentHandle=Grid.driver().getWindowHandle();
+		int size=handles.size();
+		for(String newHandle:handles){
+			if(!newHandle.equals(currentHandle)&&!existedHandles.contains(newHandle)){
+				Grid.driver().switchTo().window(newHandle);
+			}
+			}
+		}
 
 }
