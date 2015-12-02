@@ -1,5 +1,6 @@
 package com.symbio.test.utility;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.paypal.selion.platform.grid.Grid;
+import com.paypal.selion.platform.html.TextField;
 
 /**
  * Utility class containing methods used in other methods
@@ -65,12 +67,56 @@ public class Utility {
 	 * 
 	 */
 	public void switchToNewWindow(List<String> existedHandles) {
+
 		Set<String> handles = Grid.driver().getWindowHandles();
 		String currentHandle = Grid.driver().getWindowHandle();
-		int size = handles.size();
+
 		for (String newHandle : handles) {
 			if (!newHandle.equals(currentHandle) && !existedHandles.contains(newHandle)) {
 				Grid.driver().switchTo().window(newHandle);
+			}
+		}
+	}
+
+	/**
+	 * Switch to the new window
+	 * 
+	 * @param existedHandles
+	 *            The set of handles before the new handle come up
+	 * 
+	 */
+	public void switchToNewWindow(Set<String> existedHandles) {
+
+		this.switchToNewWindow(new ArrayList<String>(existedHandles));
+	}
+
+	/**
+	 * Switch to the new window
+	 * 
+	 */
+	public void switchToNewWindow() {
+		this.switchToNewWindow(new ArrayList<String>());
+	}
+
+	/**
+	 * Type a string as each character with small pause between
+	 * 
+	 * @param inputString
+	 *            String to input
+	 * @param targetTextField
+	 *            Target textfield
+	 */
+	public void simulateTypingToTextField(String inputString, TextField targetTextField) {
+
+		// Loop through all characters in a string
+		for (int loopIndex = 0; loopIndex < inputString.length(); loopIndex++) {
+			targetTextField.type(String.valueOf(inputString.charAt(loopIndex)), true);
+
+			// Small pause between each character
+			try {
+				Thread.sleep(25);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 	}

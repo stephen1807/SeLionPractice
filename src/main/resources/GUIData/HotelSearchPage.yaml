@@ -1,5 +1,11 @@
 baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 elements:
+  hotelNameSearchTextField:
+    locators:
+      US: "css=#inpHotelNameMirror"
+  hotelNameSearchButton:
+    locators:
+      US: "css=.hotelNameFilterBtn > button"
   sortPriceButton:
     locators:
       US: "css=button[data-opt-group='Price']"
@@ -9,6 +15,16 @@ elements:
   fiveStarsCheckBox:
     locators:
       US: "css=#star5"
+  loaderPopupLabel:
+    locators:
+      US: "css=#modalInterstitial .updating"
+  hotelNameSuggestionContainer:
+    locators:
+      US: "css=#typeaheadHotelsResults .results-item"
+    containerElements:
+      hotelNameSuggestionLink:
+        locators:
+          US: "css=a"
   searchResultContainer:
     locators:
       US: "css=#resultsContainer .hotelWrapper"

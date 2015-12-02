@@ -1,6 +1,6 @@
-<suite thread-count="1" verbose="1" name="Selion Test"
+<suite thread-count="2" verbose="1" name="Selion Test"
 	skipfailedinvocationcounts="false" junit="false" parallel="classes"
-	data-provider-thread-count="1" annotations="JDK">
+	data-provider-thread-count="2" annotations="JDK">
 
 	<parameter name="browser" value="*firefox" />
 

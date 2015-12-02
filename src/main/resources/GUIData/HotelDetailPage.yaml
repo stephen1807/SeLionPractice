@@ -1,0 +1,20 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  hotelNameLabel:
+    locators:
+      US: "css=#hotel-name"
+  payLaterButton:
+    locators:
+      US: "css=#pay-later-button"
+  hotelRoomOptionsContainer:
+    locators:
+      US: "css=#rooms-and-rates .room"
+    containerElements:
+      bookRoomButton:
+        locators:
+          US: "css=.book-button"
+     
+pageValidators: [
+  hotelNameLabel.isVisible
+]
+defaultLocale: "US"

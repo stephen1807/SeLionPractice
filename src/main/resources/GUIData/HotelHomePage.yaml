@@ -1,0 +1,37 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  hotelDestinationTextField:
+    locators:
+      US: "css=#hotel-destination"
+  checkinDateTextField:
+    locators:
+      US: "css=#hotel-checkin"
+  checkoutDateTextField:
+    locators:
+      US: "css=#hotel-checkout"
+  roomNumberList:
+    locators:
+      US: "css=#hotel-rooms"
+  adultNumberList:
+    locators:
+      US: "css=#hotel-1-adults"
+  childrenNumberList:
+    locators:
+      US: "css=#hotel-1-children"
+  hotelSearchButton:
+    locators:
+      US: "css=#search-button"
+  destinationSuggestionContainer:
+    locators:
+      US: "css=.results-item"
+    containerElements:
+      destinationOptionLabel:
+        locators:
+          US: "css=.details"
+pageValidators: [
+  hotelDestinationTextField.isVisible
+  checkinDateTextField.isVisible
+  checkoutDateTextField.isVisible
+  hotelSearchButton.isVisible
+]
+defaultLocale: "US"
