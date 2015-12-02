@@ -1,0 +1,9 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  hotelNameLabel:
+    locators:
+      US: "css=#trip-summary .hotel-description a"
+pageValidators: [
+  hotelNameLabel.isVisible
+]
+defaultLocale: "US"

@@ -5,7 +5,7 @@ elements:
       US: "css=#tab-flight-tab"
   hotelButton:
     locators:
-      US: "css=#tab-car-tab"
+      US: "css=#primary-header-hotel"
   changeLanguageLink:
     locators:
       US: "css=#globalSiteNavigation>ul[class='shop-nav nav-group cf']>li[id='language-link-2057']>a"

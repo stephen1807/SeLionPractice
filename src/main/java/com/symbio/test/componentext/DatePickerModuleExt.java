@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 import com.paypal.selion.testcomponents.DatePickerModule;
 
@@ -29,13 +30,13 @@ public class DatePickerModuleExt extends DatePickerModule {
 		Calendar targetCalendar = new GregorianCalendar();
 		Calendar currentCalendar = new GregorianCalendar();
 		targetCalendar.setTime(targetDate);
-		
+
 		// Format the calendar into the same format as the label in calendar
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy", new Locale("English"));
 
 		while (true) {
-			Date currentDate = simpleDateFormat.parse(this.getCurrentCalendarLabel().getText());
-			currentCalendar.setTime(currentDate);
+
+			currentCalendar.setTime(simpleDateFormat.parse(this.getCurrentCalendarLabel().getText()));
 
 			// Compare year
 			if (currentCalendar.get(Calendar.YEAR) < targetCalendar.get(Calendar.YEAR)) {
@@ -48,7 +49,7 @@ public class DatePickerModuleExt extends DatePickerModule {
 					// If earlier than targeted month, click next month button
 					this.getNextMonthButton().click();
 				} else {
-					
+
 					// Loop through all dates in the current calendar
 					for (int loopIndex = 0; loopIndex < this.getDateContainer().size(); loopIndex++) {
 						// Compare the current date with targeted date
