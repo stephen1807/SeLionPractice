@@ -20,10 +20,6 @@ public class HotelHomePageExt extends HotelHomePage {
 	/**
 	 * Insert date into the hotel homepage
 	 * 
-	 * @param checkinDate
-	 *            Check in date for the reservation
-	 * @param checkoutDate
-	 *            Check out date for the reservation
 	 * @throws ParseException
 	 *             Parse exception from the date picker
 	 */
@@ -34,11 +30,11 @@ public class HotelHomePageExt extends HotelHomePage {
 		Date nextMondayDate = utility.getNextMonday();
 
 		// Click date to the checkin textfield
-		this.getCheckinDateTextField().click(datePicker.getCurrentCalendarLabel());
+		this.getCheckinDateTextField().click(datePicker);
 		datePicker.clickDate(nextMondayDate);
 
 		// Click date to the checkout textfield
-		this.getCheckoutDateTextField().click(datePicker.getCurrentCalendarLabel());
+		this.getCheckoutDateTextField().click(datePicker);
 		datePicker.clickDate(utility.addWeekToDate(nextMondayDate, 3));
 	}
 

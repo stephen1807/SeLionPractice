@@ -3,8 +3,19 @@
 	data-provider-thread-count="2" annotations="JDK">
 
 	<parameter name="browser" value="*firefox" />
-
 	<parameter name="runLocally" value="true" />
 
+	<!--  <test verbose="2" name="SeLionPractice annotations="JDK">
+		<groups>
+			<run>
+				<include name="hotelTest" />
+				<include name="carTest" />
+			</run>
+		</groups>
 
+		<classes>
+			<class name="com.symbio.test.CarTestCase" />
+			<class name="com.symbio.test.HotelTestCase" />
+		</classes>
+	</test>-->
 </suite>

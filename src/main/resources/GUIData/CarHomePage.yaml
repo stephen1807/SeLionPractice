@@ -1,0 +1,28 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  carPickUpPlaceTextField:
+    locators:
+      US: "css=#car-pickup"
+  carDropOffPlaceTextField:
+    locators:
+      US: "css=#car-dropoff"
+  carPickUpDateTextField:
+    locators:
+      US: "css=#car-pickup-date"
+  carDropOffDateTextField:
+    locators:
+      US: "css=#car-dropoff-date"
+  carSearchButton:
+    locators:
+      US: "css=#search-button"
+  carPlaceSuggestionContainer:
+    locators:
+      US: "css=.results .results-item"
+    containerElements:
+      placeSuggestionLink:
+        locators:
+          US: "css=a"
+pageValidators: [
+  carPickUpPlaceTextField.isVisible
+]
+defaultLocale: "US"
