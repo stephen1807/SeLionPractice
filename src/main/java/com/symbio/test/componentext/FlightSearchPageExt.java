@@ -21,6 +21,7 @@ public class FlightSearchPageExt extends FlightSearchPage {
 	 * @param minute
 	 *            Minute part of total flight time
 	 */
+	@SuppressWarnings("resource")
 	public SearchResultContainer getFirstFlightUnderTime(int hourInteger, int minuteInteger) {
 		
 		//Loop through all containers

@@ -114,7 +114,7 @@ public class Utility {
 
 			// Small pause between each character
 			try {
-				Thread.sleep(25);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

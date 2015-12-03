@@ -1,29 +1,31 @@
 baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 elements:
-  sortOptionList:
+  searchLegendLabel:
     locators:
-      US: "css=#ct_avail_sort"
+      US: "css=#cars-title .none-mobile"
   carTypeSUVCheckBox:
     locators:
-      US: "css=#ct-checkbox-desktop-carSize-suv"
-  carTypeLuxuryCheckBox:
+      US: "css=label[data-filter-name='suv']"
+  carTypeVanCheckBox:
     locators:
-      US: "css=#ct-checkbox-desktop-carSize-luxury"
+      US: "css=label[data-filter-name='van']"
   searchResultContainer:
     locators:
-      US: "css=.ct-grid .ct-car"
+      US: "css=#search-results .ember-view"
     containerElements:
-      carNameLabel:
-        locators:
-          US: "css=.ct-car-details-modal .ct-palette-p-color"
       carTypeLabel:
         locators:
-          US: "css=.ct-car-type .ct-palette-s-color"
+          US: "css=.flex-content .fullName"
+      carModelLabel:
+        locators:
+          US: "css=.flex-content .car-model"
       selectResultButton:
         locators:
-          US: "css=.ct-car-rate-btn"
+          US: "css=.book-container .btn"
      
 pageValidators: [
   searchResultContainer.isVisible
+  carTypeSUVCheckBox.isVisible
+  carTypeLuxuryCheckBox.isVisible
 ]
 defaultLocale: "US"

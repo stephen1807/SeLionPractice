@@ -1,0 +1,9 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  carDescriptionLabel:
+    locators:
+      US: "css=.description .vehicle-class"
+pageValidators: [
+  carDescriptionLabel.isVisible
+]
+defaultLocale: "US"

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.paypal.selion.annotations.WebTest;
 import com.paypal.selion.platform.grid.Grid;
+import com.paypal.selion.platform.utilities.WebDriverWaitUtils;
 import com.paypal.selion.testcomponents.HomePage;
 import com.symbio.test.componentext.HotelDetailPageExt;
 import com.symbio.test.componentext.HotelHomePageExt;
@@ -29,12 +30,23 @@ public class HotelTestCase {
 	 * @throws ParseException
 	 * @throws InterruptedException
 	 */
-	@Test(dataProvider = "provideLocationNames")
+	@Test(groups = "hotelTest", dataProvider = "provideLocationNames")
 	@WebTest
 	public void testCase1(String destinationName, String hotelName) throws ParseException, InterruptedException {
 
-		Grid.driver().get("http://www.expedia.com.hk");
+		Grid.driver().get("http://www.expedia.com");
 		Grid.driver().manage().window().maximize();
+
+		// Wait until page is loaded
+		WebDriverWaitUtils.waitUntilPageIsValidated(homePage);
+
+		// If there is any redirect link, it means the site has been redirected
+		// to HK site
+		// Will click the link and go to US site
+		if (homePage.getRedirectLink().isElementPresent()) {
+			WebDriverWaitUtils.waitUntilElementIsVisible(homePage.getRedirectLink().getLocator());
+			homePage.getRedirectLink().click(homePage);
+		}
 
 		homePage.clickHotelButton(hotelHomePage);
 
@@ -61,12 +73,23 @@ public class HotelTestCase {
 	 * @throws ParseException
 	 * @throws InterruptedException
 	 */
-	@Test(dataProvider = "provideLocationNames")
+	@Test(groups = "hotelTest", dataProvider = "provideLocationNames")
 	@WebTest
 	public void testCase2(String destinationName, String hotelName) throws ParseException, InterruptedException {
 
-		Grid.driver().get("http://www.expedia.com.hk");
+		Grid.driver().get("http://www.expedia.com");
 		Grid.driver().manage().window().maximize();
+
+		// Wait until page is loaded
+		WebDriverWaitUtils.waitUntilPageIsValidated(homePage);
+
+		// If there is any redirect link, it means the site has been redirected
+		// to HK site
+		// Will click the link and go to US site
+		if (homePage.getRedirectLink().isElementPresent()) {
+			WebDriverWaitUtils.waitUntilElementIsVisible(homePage.getRedirectLink().getLocator());
+			homePage.getRedirectLink().click(homePage);
+		}
 
 		homePage.clickHotelButton(hotelHomePage);
 
@@ -95,12 +118,23 @@ public class HotelTestCase {
 	 * @throws ParseException
 	 * @throws InterruptedException
 	 */
-	@Test(dataProvider = "provideLocationNames")
+	@Test(groups = "hotelTest", dataProvider = "provideLocationNames")
 	@WebTest
 	public void testCase3(String destinationName, String hotelName) throws ParseException, InterruptedException {
 
-		Grid.driver().get("http://www.expedia.com.hk");
+		Grid.driver().get("http://www.expedia.com");
 		Grid.driver().manage().window().maximize();
+
+		// Wait until page is loaded
+		WebDriverWaitUtils.waitUntilPageIsValidated(homePage);
+
+		// If there is any redirect link, it means the site has been redirected
+		// to HK site
+		// Will click the link and go to US site
+		if (homePage.getRedirectLink().isElementPresent()) {
+			WebDriverWaitUtils.waitUntilElementIsVisible(homePage.getRedirectLink().getLocator());
+			homePage.getRedirectLink().click(homePage);
+		}
 
 		homePage.clickHotelButton(hotelHomePage);
 
@@ -125,6 +159,6 @@ public class HotelTestCase {
 	 */
 	@DataProvider
 	public Object[][] provideLocationNames() {
-		return new Object[][] { { "San Jose", "Extended Stay Downtown" } };
+		return new Object[][] { { "San Jose", "Extended Stay Downtown" }, { "Tokyo", "Hyatt" } };
 	}
 }
