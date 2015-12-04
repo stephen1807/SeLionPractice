@@ -1,21 +1,22 @@
-<suite thread-count="2" verbose="1" name="Selion Test"
+<suite thread-count="3" verbose="1" name="Selion Test"
 	skipfailedinvocationcounts="false" junit="false" parallel="classes"
-	data-provider-thread-count="2" annotations="JDK">
+	data-provider-thread-count="3" annotations="JDK">
 
 	<parameter name="browser" value="*firefox" />
 	<parameter name="runLocally" value="true" />
+	<parameter name="elementEventListener"
+		value="com.symbio.test.customlistener.PageChangeListener" />
 
-	<!--  <test verbose="2" name="SeLionPractice annotations="JDK">
+	<test verbose="2" name="SeLionPractice" annotations=" JDK">
 		<groups>
 			<run>
 				<include name="hotelTest" />
 				<include name="carTest" />
 			</run>
 		</groups>
-
 		<classes>
 			<class name="com.symbio.test.CarTestCase" />
 			<class name="com.symbio.test.HotelTestCase" />
 		</classes>
-	</test>-->
+	</test>
 </suite>

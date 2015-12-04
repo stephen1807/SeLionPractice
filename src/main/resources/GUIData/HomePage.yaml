@@ -2,7 +2,7 @@ baseClass: com.paypal.selion.testcomponents.BasicPageImpl
 elements:
   flightButton:
     locators:
-      US: "css=#tab-flight-tab"
+      US: "css=#primary-header-flight"
   hotelButton:
     locators:
       US: "css=#primary-header-hotel"
@@ -17,8 +17,7 @@ elements:
       US: "css=#redirectBanner .cols-row a"
 pageValidators: [ 
   flightButton.isVisible
-  searchButton
-  carButton
-  hotelButton
+  carButton.isVisible
+  hotelButton.isVisible
 ]
 defaultLocale: "US"

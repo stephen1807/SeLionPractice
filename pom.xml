@@ -63,6 +63,11 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<htmlCustomElements>
+						<htmlCustomElement>com.symbio.test.customelement.ExpediaDatePicker</htmlCustomElement>
+					</htmlCustomElements>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

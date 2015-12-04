@@ -19,6 +19,13 @@ public class HotelDetailPageExt extends HotelDetailPage {
 	 * Click on the first available room type
 	 */
 	public void clickFirstAvailableRoom() {
+		
+		if (this.getClosePopupButton().isVisible()){
+			this.getClosePopupButton().click();
+		}
+		
+		WebDriverWaitUtils.waitUntilElementIsVisible(this.getHotelRoomOptionsContainer().getLocator());
+		
 		this.getHotelRoomOptionsContainer(0).getBookRoomButton().click();
 		
 		if (this.getPayLaterButton().isVisible()){

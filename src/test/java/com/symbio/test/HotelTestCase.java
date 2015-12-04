@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.paypal.selion.annotations.WebTest;
 import com.paypal.selion.platform.grid.Grid;
 import com.paypal.selion.platform.utilities.WebDriverWaitUtils;
+import com.paypal.selion.reports.runtime.SeLionReporter;
 import com.paypal.selion.testcomponents.HomePage;
 import com.symbio.test.componentext.HotelDetailPageExt;
 import com.symbio.test.componentext.HotelHomePageExt;
@@ -61,6 +62,9 @@ public class HotelTestCase {
 		hotelSearchPage.clickFirstSearchResultLink();
 
 		hotelDetailPage.clickFirstAvailableRoom();
+
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	/**
@@ -105,6 +109,9 @@ public class HotelTestCase {
 		hotelSearchPage.clickFirstSearchResultLink();
 
 		hotelDetailPage.clickFirstAvailableRoom();
+
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	/**
@@ -150,6 +157,8 @@ public class HotelTestCase {
 
 		hotelDetailPage.clickFirstAvailableRoom();
 
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	/**
@@ -159,6 +168,6 @@ public class HotelTestCase {
 	 */
 	@DataProvider
 	public Object[][] provideLocationNames() {
-		return new Object[][] { { "San Jose", "Extended Stay Downtown" }, { "Tokyo", "Hyatt" } };
+		return new Object[][] { { "San Jose", "Extended Stay Downtown" } };
 	}
 }
