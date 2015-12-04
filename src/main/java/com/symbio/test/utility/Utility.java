@@ -63,14 +63,13 @@ public class Utility {
 	 * Switch to the new window
 	 * 
 	 * @param existedHandles
-	 *            The list of handles before the new handle come up
+	 *            The set of handles before the new handle come up
 	 * 
 	 */
 	public void switchToNewWindow(List<String> existedHandles) {
 
 		Set<String> handles = Grid.driver().getWindowHandles();
 		String currentHandle = Grid.driver().getWindowHandle();
-
 		for (String newHandle : handles) {
 			if (!newHandle.equals(currentHandle) && !existedHandles.contains(newHandle)) {
 				Grid.driver().switchTo().window(newHandle);

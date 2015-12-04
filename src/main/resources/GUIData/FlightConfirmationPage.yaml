@@ -1,0 +1,13 @@
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+elements:
+  firstToLabel:
+    locators:
+      US: "css=#flightModule-0 .col.fpd-col-4.fpd-od-pair>div:nth-child(2)>span:last-child "
+  secondToLabel:
+    locators:
+      US: "#flightModule-1 .col.fpd-col-4.fpd-od-pair>div:nth-child(2)>span:last-child "
+pageValidators: [
+  firstToLabel.isVisible,
+  secondToLabel.isVisible
+]
+defaultLocale: "US"

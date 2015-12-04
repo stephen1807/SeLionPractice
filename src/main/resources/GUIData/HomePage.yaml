@@ -1,8 +1,8 @@
-baseClass: com.paypal.selion.testcomponents.BasicPageImpl
+baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 elements:
-  flightButton:
+  flightLink:
     locators:
-      US: "css=#tab-flight-tab"
+      US: "css=#primary-header-flight"
   hotelButton:
     locators:
       US: "css=#primary-header-hotel"
@@ -16,8 +16,7 @@ elements:
     locators:
       US: "css=#redirectBanner .cols-row a"
 pageValidators: [ 
-  flightButton.isVisible
-  searchButton
+  flightLink.isVisible
   carButton
   hotelButton
 ]

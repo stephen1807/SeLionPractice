@@ -2,17 +2,23 @@ baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
 elements:
   searchSortOptionList:
     locators:
-      US: "css=.select select[name='sort']"
+      US: "css=.select>select[name='sort']"
   searchResultContainer:
     locators:
-      US: "css=.flex-card"
+      US: "css=#flightModuleList .flight-module"
     containerElements:
       flightLengthLabel:
         locators:
           US: "css=.duration-emphasis"
       selectResultButton:
         locators:
-          US: "css=.t-select-btn"
+          US: "css=.t-select-btn"    
+  completeTripLink: 
+    locators:
+      US: "css=#tab-roundtrip"
+  noThanksLink:
+    locators:
+      US: "css=#forcedChoiceNoThanks"
 pageValidators: [
   searchResultContainer.isVisible
 ]
