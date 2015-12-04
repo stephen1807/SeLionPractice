@@ -1,4 +1,4 @@
-baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+baseClass: "com.paypal.selion.testcomponents.HomePage"
 elements:
   carPickUpPlaceTextField:
     locators:
@@ -9,6 +9,9 @@ elements:
   carPickUpDateTextField:
     locators:
       US: "css=#car-pickup-date"
+  carExpediaDatePicker:
+    locators:
+      US: "css=.cal"
   carDropOffDateTextField:
     locators:
       US: "css=#car-dropoff-date"
@@ -24,5 +27,6 @@ elements:
           US: "css=a"
 pageValidators: [
   carPickUpPlaceTextField.isVisible
+  carSearchButton.isVisible
 ]
 defaultLocale: "US"

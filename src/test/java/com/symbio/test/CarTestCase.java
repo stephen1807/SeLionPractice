@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.paypal.selion.annotations.WebTest;
 import com.paypal.selion.platform.grid.Grid;
 import com.paypal.selion.platform.utilities.WebDriverWaitUtils;
+import com.paypal.selion.reports.runtime.SeLionReporter;
 import com.paypal.selion.testcomponents.HomePage;
 import com.symbio.test.componentext.CarHomePageExt;
 import com.symbio.test.componentext.CarSearchPageExt;
@@ -25,7 +26,7 @@ public class CarTestCase {
 	 * 
 	 * @throws ParseException
 	 */
-	@Test(groups = "carTest", dependsOnGroups = { "flightTest" })
+	@Test(groups = "carTest")
 	@WebTest
 	public void testCase1() throws ParseException {
 		Grid.driver().get("http://www.expedia.com");
@@ -52,6 +53,9 @@ public class CarTestCase {
 
 		// Select the first car in the list
 		carSearchPage.selectFirstAvailableCar();
+
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	/**
@@ -59,7 +63,7 @@ public class CarTestCase {
 	 * 
 	 * @throws ParseException
 	 */
-	@Test(groups = "carTest", dependsOnGroups = { "flightTest" })
+	@Test(groups = "carTest")
 	@WebTest
 	public void testCase2() throws ParseException {
 		Grid.driver().get("http://www.expedia.com");
@@ -89,14 +93,17 @@ public class CarTestCase {
 
 		// Select the first car in the list
 		carSearchPage.selectFirstAvailableCar();
+
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	/**
-	 * Get the cheapest Van
+	 * Get the cheapest Van , dependsOnGroups = { "flightTest" }
 	 * 
 	 * @throws ParseException
 	 */
-	@Test(groups = "carTest", dependsOnGroups = { "flightTest" })
+	@Test(groups = "carTest")
 	@WebTest
 	public void testCase3() throws ParseException {
 		Grid.driver().get("http://www.expedia.com");
@@ -126,6 +133,9 @@ public class CarTestCase {
 
 		// Select the first car in the list
 		carSearchPage.selectFirstAvailableCar();
+
+		SeLionReporter.log(Grid.driver().getTitle(), true, true);
+
 	}
 
 	public void setFlightLocation1String(String flightLocation1String) {

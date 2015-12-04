@@ -1,4 +1,4 @@
-baseClass: "com.paypal.selion.testcomponents.BasicPageImpl"
+baseClass: "com.paypal.selion.testcomponents.HomePage"
 elements:
   hotelDestinationTextField:
     locators:
@@ -9,15 +9,9 @@ elements:
   checkoutDateTextField:
     locators:
       US: "css=#hotel-checkout"
-  roomNumberList:
+  checkinExpediaDatePicker:
     locators:
-      US: "css=#hotel-rooms"
-  adultNumberList:
-    locators:
-      US: "css=#hotel-1-adults"
-  childrenNumberList:
-    locators:
-      US: "css=#hotel-1-children"
+      US: "css=.cal"
   hotelSearchButton:
     locators:
       US: "css=#search-button"
@@ -30,8 +24,5 @@ elements:
           US: "css=.details"
 pageValidators: [
   hotelDestinationTextField.isVisible
-  checkinDateTextField.isVisible
-  checkoutDateTextField.isVisible
-  hotelSearchButton.isVisible
 ]
 defaultLocale: "US"

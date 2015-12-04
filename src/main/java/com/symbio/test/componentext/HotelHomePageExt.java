@@ -26,16 +26,15 @@ public class HotelHomePageExt extends HotelHomePage {
 	public void insertDate() throws ParseException {
 
 		// Initialize variables
-		DatePickerModuleExt datePicker = new DatePickerModuleExt();
 		Date nextMondayDate = utility.getNextMonday();
 
 		// Click date to the checkin textfield
-		this.getCheckinDateTextField().click(datePicker);
-		datePicker.clickDate(nextMondayDate);
+		this.getCheckinDateTextField().click(this.getCheckinExpediaDatePicker());
+		this.getCheckinExpediaDatePicker().clickDate(nextMondayDate);
 
 		// Click date to the checkout textfield
-		this.getCheckoutDateTextField().click(datePicker);
-		datePicker.clickDate(utility.addWeekToDate(nextMondayDate, 3));
+		this.getCheckoutDateTextField().click(this.getCheckinExpediaDatePicker());
+		this.getCheckinExpediaDatePicker().clickDate(utility.addWeekToDate(nextMondayDate, 3));
 	}
 
 	/**

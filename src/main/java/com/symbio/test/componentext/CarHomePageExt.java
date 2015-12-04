@@ -43,22 +43,20 @@ public class CarHomePageExt extends CarHomePage {
 	 */
 	public void insertDates() throws ParseException {
 
-		DatePickerModuleExt datePickerModule = new DatePickerModuleExt();
-
 		//Get the date of next available monday
 		Date nextMondayDate = utility.getNextMonday();
 		
 		//Click the textfield and wait for the date picker to appear
-		this.getCarPickUpDateTextField().click(datePickerModule);
+		this.getCarPickUpDateTextField().click(this.getCarExpediaDatePicker());
 		
 		//Click the targeted date
-		datePickerModule.clickDate(nextMondayDate);
+		this.getCarExpediaDatePicker().clickDate(nextMondayDate);
 		
 		//Click the textfield and wait for the date picker to appear
-		this.getCarDropOffDateTextField().click(datePickerModule);
+		this.getCarDropOffDateTextField().click(this.getCarExpediaDatePicker());
 		
 		//Calculate the 3 weeks later date and then click the targeted date
-		datePickerModule.clickDate(utility.addWeekToDate(nextMondayDate, 3));
+		this.getCarExpediaDatePicker().clickDate(utility.addWeekToDate(nextMondayDate, 3));
 		
 	}
 }

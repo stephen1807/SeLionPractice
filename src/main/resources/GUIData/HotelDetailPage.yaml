@@ -6,6 +6,9 @@ elements:
   payLaterButton:
     locators:
       US: "css=#pay-later-button"
+  closePopupButton:
+    locators:
+      US: "css=#modelCloseButton"
   hotelRoomOptionsContainer:
     locators:
       US: "css=#rooms-and-rates .room"
