@@ -1,0 +1,38 @@
+baseClass: "com.paypal.selion.testcomponents.HomePage"
+elements:
+  startCityTextField:
+    locators:
+      US: "css=#flight-origin"
+  startCitySuggestionContainer:
+    locators:
+      US: "css=.results-item"
+    containerElements:
+      stratCitySuggestionLink:
+        locators:
+          US: "css=a"
+  destinationCityTextField:
+    locators:
+      US: "css=#flight-destination"     
+  destinationSuggestionContainer:
+    locators:
+      US: "css=.results-item"
+    containerElements:
+      destinationSuggestionLink:
+        locators:
+          US: "css=a"
+  startDateTextField:
+    locators:
+      US: "css=#flight-departing"
+  endDateTextField:
+    locators:
+      US: "css=#flight-returning"
+  nextMonthButton:
+    locators:
+      US: "css=.btn-paging.btn-secondary.next"
+  searchButton:
+    locators:
+      US: "css=#search-button"
+pageValidators: [
+  startCityTextField
+]
+defaultLocale: "US"
